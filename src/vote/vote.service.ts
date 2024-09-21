@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { CreateVoteInput } from './dto/create-vote.input';
 import { PersonalVote, Vote } from './entities/vote.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { ObjectId, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { CreatePersonalVoteInput } from './dto/create-personal-vote.input';
 
 @Injectable()
