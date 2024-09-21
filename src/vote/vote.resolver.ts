@@ -4,7 +4,7 @@ import { Vote } from './entities/vote.entity';
 import { CreateVoteInput } from './dto/create-vote.input';
 import { CreatePersonalVoteInput } from './dto/create-personal-vote.input';
 import { UseGuards } from '@nestjs/common';
-import { FirebaseGuard } from 'src/authentication/guards/firebase.guard';
+import { FirebaseGuard } from '../authentication/guards/firebase.guard';
 
 @Resolver(() => Vote)
 export class VoteResolver {
