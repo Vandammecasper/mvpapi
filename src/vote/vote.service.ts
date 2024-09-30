@@ -87,9 +87,12 @@ export class VoteService {
   }
 
   async findByCreatorUid(uid: string) {
-    const votes = await this.voteRepository.find({ where: { creatorUid: uid } });
-    return votes;
-  }
+  const votes = await this.voteRepository.find({ where: { creatorUid: uid } });
+  
+  const filteredVotes = votes.filter(vote => vote.personalVotes && vote.personalVotes.length > 0);
+
+  return filteredVotes;
+}
 
   async findByVoteId(voteId: string) {
     const vote = await this.voteRepository.findOne({ where: { voteId: voteId } });
